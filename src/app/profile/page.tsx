@@ -15,6 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Header } from '@/components/layout/header';
 import { Icons } from '@/components/elements/icons';
 import Link from 'next/link';
+import { ProtectedLayout } from '@/components/layout/Protectedlayout';
 
 const profileSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -75,7 +76,8 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+   <ProtectedLayout>
+     <div className="min-h-screen bg-background">
       {/* <Header /> */}
       <div className="container max-w-2xl mx-auto py-8 px-4">
         <div className="flex items-center gap-2 mb-6">
@@ -149,5 +151,6 @@ export default function ProfilePage() {
         </Card>
       </div>
     </div>
+   </ProtectedLayout>
   );
 }

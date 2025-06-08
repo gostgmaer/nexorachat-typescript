@@ -15,6 +15,7 @@ import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ThemeSwitch } from '../elements/theme-switch';
+import { useEffect } from 'react';
 
 export function Header() {
   const { data: session } = useSession();
@@ -24,6 +25,18 @@ export function Header() {
   const handleSignOut = () => {
     signOut({ callbackUrl: '/auth/signin' });
   };
+
+    useEffect(() => {
+      const setSessionCookies = async () => {
+          try {
+            await fetch("/api/auth/set-cookies");
+          } catch (error) {
+            console.error("Failed to set session cookies:", error);
+          }
+        };
+  
+        setSessionCookies();
+    }, [session]);
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

@@ -15,30 +15,22 @@ export function MainLayout({ children }: MainLayoutProps) {
 
   useEffect(() => {
     const setSessionCookies = async () => {
-        try {
-          await fetch("/api/auth/set-cookies");
-        } catch (error) {
-          console.error("Failed to set session cookies:", error);
-        }
-      };
+      try {
+        await fetch("/api/auth/set-cookies");
+      } catch (error) {
+        console.error("Failed to set session cookies:", error);
+      }
+    };
 
-      setSessionCookies();
+    setSessionCookies();
   }, [session]);
 
   return (
     <div className="flex flex-col min-h-screen">
       <>
-        {!session ? (
-          <>
-            <Header />
-            <main className="flex-grow container mx-auto px-4">{children}</main>
-            <Footer />
-          </>
-        ) : (
-          <Dashboard>
-            <main className="flex-grow container mx-auto px-4">{children}</main>
-          </Dashboard>
-        )}
+        <Header />
+        <main className="flex-grow container mx-auto px-4">{children}</main>
+        <Footer />
       </>
     </div>
   );

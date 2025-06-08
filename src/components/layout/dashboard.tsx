@@ -28,15 +28,15 @@ export default function Dashboard({ children }: DashboardProps) {
   return (
     <>
       <Header />
-    <div className="flex h-screen bg-background">
-      <Sidebar className="hidden md:flex" />
+      <div className="flex h-screen bg-background">
+        <Sidebar className="hidden md:flex" />
 
-      <div className="flex-1 flex flex-col">
-        <div className="flex-grow container mx-auto px-4">{children}</div>
+        <div className="flex-1 flex flex-col">
+          <div className="flex-grow container mx-auto px-4">{children}</div>
+        </div>
+
+        {/* <NotificationCenter /> */}
       </div>
-
-      {/* <NotificationCenter /> */}
-    </div>
     </>
   );
 }

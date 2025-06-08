@@ -11,6 +11,7 @@ import { MessageInput } from '@/components/pages/chat/message-input';
 import { IncomingCallModal } from '@/components/elements/call/incoming-call-modal';
 import { CallInterface } from '@/components/elements/call/call-interface';
 import { Icons } from '@/components/elements/icons';
+import { ProtectedLayout } from '@/components/layout/Protectedlayout';
 
 export default function ChatPage() {
   const { data: session, status } = useSession();
@@ -47,7 +48,8 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="h-screen flex flex-col">
+ <ProtectedLayout>
+     <div className="h-screen flex flex-col">
       {/* <Header /> */}
       <div className="flex-1 flex overflow-auto">
         {/* <Sidebar className="hidden md:flex" /> */}
@@ -62,5 +64,6 @@ export default function ChatPage() {
       <IncomingCallModal />
       <CallInterface />
     </div>
+ </ProtectedLayout>
   );
 }

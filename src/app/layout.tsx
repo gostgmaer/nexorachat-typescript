@@ -40,7 +40,9 @@ export default async function RootLayout({
               </Dashboard>
             )} */}
 
-             <MainLayout>{children}</MainLayout>
+             {/* <MainLayout>{children}</MainLayout> */}
+
+               {children}
           </Providers>
         </SessionProviderWrapper>
       </body>

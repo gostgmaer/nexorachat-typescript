@@ -21,6 +21,7 @@ import { Moon, Sun, Bell, Volume2, User, Save } from "lucide-react";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Icons } from "@/components/elements/icons";
+import { ProtectedLayout } from "@/components/layout/Protectedlayout";
 
 export default function SettingsPage() {
   const { data: session } = useSession();
@@ -46,7 +47,8 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="flex-1 overflow-auto">
+    <ProtectedLayout>
+      <div className="flex-1 overflow-auto">
       <div className="max-w-4xl mx-auto p-6 space-y-8">
         <div>
           <div className="flex items-center gap-2 mb-6">
@@ -279,5 +281,6 @@ export default function SettingsPage() {
         </Card>
       </div>
     </div>
+    </ProtectedLayout>
   );
 }

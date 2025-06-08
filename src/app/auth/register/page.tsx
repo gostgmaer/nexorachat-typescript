@@ -5,6 +5,7 @@ import { useAppSelector } from '@/hooks/useAppSelector';
 
 import { Metadata } from 'next';
 import { SignupForm } from '@/components/pages/auth/signup-form';
+import { MainLayout } from '@/components/layout/main-layout';
 
 // export const metadata: Metadata = {
 //   title: 'Register | NextAuth',
@@ -29,7 +30,8 @@ export default function RegisterPage() {
   // };
 
   return (
-    <div className="container mx-auto py-10 md:py-16">
+   <MainLayout>
+     <div className="container mx-auto py-10 md:py-16">
       <div className="mx-auto max-w-3xl space-y-8">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Create Your Account</h1>
@@ -47,5 +49,6 @@ export default function RegisterPage() {
         </div>
       </div>
     </div>
+   </MainLayout>
   );
 }
