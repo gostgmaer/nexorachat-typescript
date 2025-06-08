@@ -14,8 +14,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   const { data: session, status } = useSession();
 
   useEffect(() => {
-    if (session) {
-      const setSessionCookies = async () => {
+    const setSessionCookies = async () => {
         try {
           await fetch("/api/auth/set-cookies");
         } catch (error) {
@@ -24,7 +23,6 @@ export function MainLayout({ children }: MainLayoutProps) {
       };
 
       setSessionCookies();
-    }
   }, [session]);
 
   return (
