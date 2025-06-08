@@ -58,6 +58,7 @@
     "@types/node": "20.6.2",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
+    "@types/simple-peer": "^9.11.8",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

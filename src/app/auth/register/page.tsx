@@ -1,10 +1,8 @@
 'use client';
 
 import { useAppSelector } from '@/hooks/useAppSelector';
-import { FormProgress } from '@/components/ui/form-progress';
-import { BasicInfoForm } from '@/components/pages/registration/basic-info-form';
-import { AddressInfoForm } from '@/components/pages/registration/address-info-form';
-import { SecurityInfoForm } from '@/components/pages/registration/security-info-form';
+
+
 import { Metadata } from 'next';
 import { SignupForm } from '@/components/pages/auth/signup-form';
 
@@ -14,7 +12,7 @@ import { SignupForm } from '@/components/pages/auth/signup-form';
 // };
 
 export default function RegisterPage() {
-  const currentStep = useAppSelector((state) => state.registration.currentStep);
+  // const currentStep = useAppSelector((state) => state.registration.currentStep);
 
   // const renderStepForm = () => {
   //   switch (currentStep) {

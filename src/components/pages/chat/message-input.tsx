@@ -16,7 +16,7 @@ export function MessageInput({ className }: MessageInputProps) {
   const [isTyping, setIsTyping] = useState(false);
   const { sendMessage, startTyping, stopTyping, activeChat } = useChat();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  const typingTimeoutRef = useRef<NodeJS.Timeout>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

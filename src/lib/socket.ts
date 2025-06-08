@@ -39,15 +39,15 @@ class SocketManager {
     }
   }
 
-  on<K extends keyof SocketEvents>(event: K, callback: SocketEvents[K]): void {
+  on<K extends keyof SocketEvents>(event: K, callback: (...args: Parameters<SocketEvents[K]>) => void): void {
     if (this.socket) {
-      this.socket.on(event, callback);
+      this.socket.on(event, callback as any);
     }
   }
 
   off<K extends keyof SocketEvents>(event: K, callback?: SocketEvents[K]): void {
     if (this.socket) {
-      this.socket.off(event, callback);
+      this.socket.off(event, callback as any);
     }
   }
 }

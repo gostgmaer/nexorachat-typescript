@@ -82,6 +82,8 @@ export interface CallStore {
   endCall: () => void;
 }
 
+export type Theme = 'dark' | 'light' | 'system';
+
 export interface SocketEvents {
   'user-connected': (user: User) => void;
   'user-disconnected': (userId: string) => void;

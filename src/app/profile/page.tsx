@@ -97,10 +97,10 @@ export default function ProfilePage() {
           <CardContent className="space-y-6">
             <div className="flex items-center space-x-4">
               <Avatar className="h-20 w-20">
-                <AvatarImage src={session["user"].image || ''} />
+                {/* <AvatarImage src={session["user"].image || ''} />
                 <AvatarFallback className="text-lg">
                   {session?.user.name?.[0]?.toUpperCase()}
-                </AvatarFallback>
+                </AvatarFallback> */}
               </Avatar>
               <div>
                 <Button variant="outline" size="sm">

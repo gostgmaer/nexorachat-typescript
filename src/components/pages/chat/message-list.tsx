@@ -15,6 +15,7 @@ export function MessageList() {
   const { activeChat } = useChatStore();
   const { users } = useUserStore();
   const { initiateCall } = useCall();
+  // const {isTyping } = activeChat
 
   if (!activeChat) {
     return (
@@ -29,7 +30,7 @@ export function MessageList() {
   }
 
   const participant = activeChat.participants[0];
-  const isTyping = activeChat.isTyping && activeChat.typingUsers?.length > 0;
+  const isTyping = activeChat.isTyping && activeChat?.typingUsers?.length || 0 > 0;
 
   const getSenderInfo = (senderId: string) => {
     if (senderId === currentUserId) return { name: 'You', image: undefined };
