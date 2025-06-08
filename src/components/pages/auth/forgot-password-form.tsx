@@ -65,7 +65,7 @@ export function ForgotPasswordForm() {
         </div>
 
         <div className="text-sm">
-          <Link href="/auth/login" className="font-medium text-primary underline-offset-4 hover:underline">
+          <Link href="/auth/signin" className="font-medium text-primary underline-offset-4 hover:underline">
             Back to login
           </Link>
         </div>
@@ -114,7 +114,7 @@ export function ForgotPasswordForm() {
 
       <div className="text-center text-sm">
         Remember your password?{' '}
-        <Link href="/auth/login" className="font-medium text-primary underline-offset-4 hover:underline">
+        <Link href="/auth/signin" className="font-medium text-primary underline-offset-4 hover:underline">
           Back to login
         </Link>
       </div>

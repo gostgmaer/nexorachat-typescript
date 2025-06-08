@@ -115,7 +115,7 @@ export const authOptions: AuthOptions = {
 
   secret,
   pages: {
-    signIn: "/auth/login",
+    signIn: "/auth/signin",
     signOut: "/",
   },
 
